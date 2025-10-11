@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moroccan Student Tools - أدوات الطلاب المغاربة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🇲🇦 Moroccan Student Tools</h1>
+        <p>أدوات مفيدة للطلاب المغاربة - Free tools for Moroccan students</p>
+    </header>
+
+    <main>
+        <div class="tools-grid">
+            
+            <!-- Currency Converter -->
+            <div class="tool-card">
+                <h2>💱 Currency Converter</h2>
+                <p>Convert MAD to other currencies</p>
+                <div class="tool-content">
+                    <input type="number" id="madAmount" placeholder="Amount in MAD" min="0">
+                    <select id="targetCurrency">
+                        <option value="USD">USD (Dollar)</option>
+                        <option value="EUR">EUR (Euro)</option>
+                        <option value="GBP">GBP (Pound)</option>
+                        <option value="CAD">CAD (Canadian Dollar)</option>
+                    </select>
+                    <button onclick="convertCurrency()">Convert</button>
+                    <div id="currencyResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Study Timer -->
+            <div class="tool-card">
+                <h2>⏰ Study Timer</h2>
+                <p>Pomodoro technique timer</p>
+                <div class="tool-content">
+                    <div id="timerDisplay">25:00</div>
+                    <div class="timer-controls">
+                        <button onclick="startTimer()">Start</button>
+                        <button onclick="pauseTimer()">Pause</button>
+                        <button onclick="resetTimer()">Reset</button>
+                    </div>
+                    <div class="timer-presets">
+                        <button onclick="setTimer(25)">25 min</button>
+                        <button onclick="setTimer(15)">15 min</button>
+                        <button onclick="setTimer(5)">5 min</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade Calculator -->
+            <div class="tool-card">
+                <h2>📊 Grade Calculator</h2>
+                <p>Calculate your average grade</p>
+                <div class="tool-content">
+                    <div id="gradeInputs">
+                        <div class="grade-input">
+                            <input type="number" placeholder="Grade" min="0" max="20" step="0.5">
+                            <input type="number" placeholder="Coefficient" min="1" value="1">
+                        </div>
+                    </div>
+                    <button onclick="addGradeInput()">+ Add Grade</button>
+                    <button onclick="calculateAverage()">Calculate Average</button>
+                    <div id="gradeResult" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Expense Tracker -->
+            <div class="tool-card">
+                <h2>💰 Expense Tracker</h2>
+                <p>Track your daily expenses</p>
+                <div class="tool-content">
+                    <input type="text" id="expenseDesc" placeholder="Description">
+                    <input type="number" id="expenseAmount" placeholder="Amount (MAD)" min="0">
+                    <button onclick="addExpense()">Add Expense</button>
+                    <div id="expensesList"></div>
+                    <div id="totalExpenses" class="result"></div>
+                    <button onclick="clearExpenses()" class="clear-btn">Clear All</button>
+                </div>
+            </div>
+
+            <!-- Link Shortener -->
+            <div class="tool-card">
+                <h2>🔗 Link Shortener</h2>
+                <p>Create short links for sharing</p>
+                <div class="tool-content">
+                    <input type="url" id="longUrl" placeholder="Enter your long URL">
+                    <button onclick="shortenUrl()">Shorten</button>
+                    <div id="shortUrlResult" class="result"></div>
+                    <div id="savedLinks"></div>
+                </div>
+            </div>
+
+            <!-- QR Code Generator -->
+            <div class="tool-card">
+                <h2>📱 QR Code Generator</h2>
+                <p>Generate QR codes for text or URLs</p>
+                <div class="tool-content">
+                    <input type="text" id="qrText" placeholder="Enter text or URL">
+                    <button onclick="generateQR()">Generate QR</button>
+                    <div id="qrResult" class="result"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ for Moroccan students | Support: <a href="#" onclick="showDonation()">Buy me a coffee ☕</a></p>
+        <p>🌟 If this helped you, please share with your friends! 🌟</p>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonation()">&times;</span>
+            <h3>Support This Project ❤️</h3>
+            <p>If these tools helped you, consider supporting with a small donation:</p>
+            <div class="donation-options">
+                <p>💳 PayPal: pshtazbe@gmail.com</p>
+                <p>🏦 CIH Bank: [Add your CIH account later]</p>
+                <p>📱 Orange Money: [Add your number later]</p>
+            </div>
+            <p>Even 1 MAD helps keep this free for all students! 🙏</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
